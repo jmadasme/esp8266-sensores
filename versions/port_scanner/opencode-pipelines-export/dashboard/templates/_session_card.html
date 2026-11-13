@@ -1,0 +1,89 @@
+<div class="session-card" data-session="{{ session.alias }}" data-progress="{{ session.progress }}" data-completed="{{ session.completed|lower }}" data-estado="{{ session.estado }}">
+    <div class="session-header">
+        <div class="session-title-section">
+            <span class="session-status-dot {% if session.completed %}completed{% elif session.estado == 'corriendo' or session.progress > 0 %}running{% elif session.estado == 'error' %}error{% else %}pending{% endif %}"></span>
+            <h3 class="session-name">{{ session.alias }}</h3>
+            <span class="status-tag tag-{{ session.estado }}">{{ session.estado }}</span>
+            {% if session.completed %}
+                <span class="completion-badge"><i class="bi bi-check2-circle"></i> Completado</span>
+            {% endif %}
+            {% if session.pid %}
+                <span class="pid-badge"><i class="bi bi-hdd"></i> PID {{ session.pid }}</span>
+            {% endif %}
+        </div>
+        <div class="session-meta">
+            <span class="meta-item"><i class="bi bi-clock"></i> {{ session.updated_at or session.inicio or '—' }}</span>
+            <span class="meta-item"><i class="bi bi-percent"></i> {{ session.progress }}%</span>
+        </div>
+    </div>
+
+    <div class="progress-section">
+        <div class="progress-header">
+            <span class="progress-label">
+                {% if session.current_step %}
+                    <i class="bi bi-arrow-right-circle"></i> Paso actual: <strong>{{ session.current_step }}</strong>
+                {% else %}
+                    Progreso general
+                {% endif %}
+            </span>
+            <span class="progress-percentage">{{ session.progress }}%</span>
+        </div>
+        <div class="progress-bar-track">
+            <div class="progress-bar-fill" style="width: {{ session.progress }}%"></div>
+        </div>
+    </div>
+
+    {% if session.spec %}
+    <div class="session-spec">
+        <i class="bi bi-card-text"></i>
+        <span class="spec-text">{{ session.spec[:120] }}{% if session.spec|length > 120 %}...{% endif %}</span>
+    </div>
+    {% endif %}
+
+    <div class="steps-container">
+        {% for step in session.steps %}
+            <div class="step-item {% if step.active %}active{% endif %} step-{{ step.status }}"
+                 data-step="{{ step.key }}" data-status="{{ step.status }}">
+                <div class="step-indicator">
+                    <div class="step-icon-wrapper">
+                        <i class="{{ step.icon }}"></i>
+                    </div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <div class="step-header">
+                        <span class="step-label">{{ step.label }}</span>
+                        <span class="step-status-badge status-{{ step.status }}">
+                            {% if step.status == 'completed' %}
+                                <i class="bi bi-check-lg"></i> Hecho
+                            {% elif step.status == 'in_progress' %}
+                                <span class="spinner-border spinner-border-sm" role="status"></span> Ejecutando
+                            {% elif step.status == 'error' %}
+                                <i class="bi bi-exclamation-triangle"></i> Error
+                            {% else %}
+                                <i class="bi bi-hourglass"></i> Pendiente
+                            {% endif %}
+                        </span>
+                    </div>
+                    {% if step.iterations > 0 %}
+                        <div class="step-iterations">
+                            <i class="bi bi-arrow-repeat"></i> Iteraciones: <strong>{{ step.iterations }}</strong>
+                        </div>
+                    {% endif %}
+                    {% if step.comment %}
+                        <div class="step-comment">{{ step.comment }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if session.log_preview %}
+    <div class="session-log">
+        <div class="log-header">
+            <i class="bi bi-terminal"></i> Log
+        </div>
+        <pre class="log-content">{{ session.log_preview }}</pre>
+    </div>
+    {% endif %}
+</div>

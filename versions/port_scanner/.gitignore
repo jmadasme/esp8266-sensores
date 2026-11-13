@@ -1,0 +1,11 @@
+# Exclude planning and audit files
+PLAN.md
+AUDIT_REPORT.md
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS files
+.DS_Store

@@ -1,0 +1,18 @@
+# Arduino build artifacts
+build/
+.arduino/
+*.elf
+*.hex
+*.bin
+
+# Python
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+*.log
+
+# Workflow artifacts (no versionar en el repo final)
+PLAN.md
+AUDIT_REPORT.md

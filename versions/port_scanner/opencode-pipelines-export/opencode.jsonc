@@ -1,0 +1,8 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "orquestador",
+  "plugin": ["opencode-dynamic-context-pruning"],
+  "skills": {
+    "paths": ["/home/jma/.config/opencode/skills"]
+  }
+}
