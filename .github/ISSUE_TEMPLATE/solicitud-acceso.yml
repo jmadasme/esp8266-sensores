@@ -1,0 +1,48 @@
+name: Solicitud de acceso
+description: Pedir acceso a una versión privada de ESP8266 Sensores.
+title: "[Acceso] esp8266-sensores"
+labels: ["solicitud-acceso"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Este formulario pide acceso a una versión privada de **ESP8266 Sensores**.
+        La primera versión (`AirSensor-8266`) es pública y gratuita.
+  - type: dropdown
+    id: version
+    attributes:
+      label: Versión solicitada
+      options:
+        - "DHT22"
+        - "DoorSensor-8266"
+        - "LCD1602_I2C"
+        - "Ldr-8266"
+        - "ReedSwitchTester"
+        - "SensorPIR-8266"
+        - "TempSensor-8266"
+        - "random-serial"
+        - "sensorudp"
+        - "port_scanner"
+    validations:
+      required: true
+  - type: input
+    id: uso
+    attributes:
+      label: Tipo de uso
+      description: Personal, educativo, comercial, interno, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto
+      description: Contame qué querés construir, para qué y por qué necesitás esta versión.
+    validations:
+      required: true
+  - type: checkboxes
+    id: condiciones
+    attributes:
+      label: Condiciones
+      options:
+        - label: Entiendo que esta versión es privada, que no se redistribuye y que el acceso se otorga por autorización escrita.
+          required: true
