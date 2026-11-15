@@ -12,8 +12,6 @@ Cada carpeta conserva el contenido original de su etapa, sin `.git`, dependencia
 instaladas ni binarios pesados. La documentación de operación y de código está en
 [`docs/`](docs/), y el sitio del proyecto en [`docs/index.html`](docs/index.html).
 
-> **Nota de preservación:** se removieron credenciales, claves o tokens detectados en 5 archivo(s) de esta familia. Los ejemplos y plantillas seguras se conservan.
-
 ## Índice de versiones
 
 | Versión | Qué aporta | Archivos |
@@ -45,6 +43,60 @@ arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 .
 
 Cada versión tiene su propio FQBN y pinout. AirSensor, DoorSensor, SensorPIR y TempSensor usan MQTT; las utilidades Python no requieren placa.
 
+<!-- ficha -->
+## Ficha de evaluación
+
+**Madurez global: 3.3/5**
+
+| Criterio | Nota | Evidencia |
+|---|---:|---|
+| Madurez | 3/5 | Once sketches con watchdog y reconexión en los MQTT; varios son ejercicios locales y ninguno tiene tests automatizados. |
+| Reproducibilidad | 3/5 | Depende de hardware barato y un broker externo; las credenciales no se publican y solo TempSensor trae plantilla. |
+| Documentación | 3/5 | SensorPIR, TempSensor y port_scanner están bien documentados; ReedSwitchTester y otras variantes carecen de README. |
+| Honestidad de límites | 4/5 | Reconoce fallos de reconexión, límites del MQ135 y ausencia de plantillas; alguna credencial queda visible en el README. |
+| Valor demostrativo | 4/5 | Concentra patrones útiles de sensórica ESP8266: watchdog, heartbeat, MAC aleatoria y diagnóstico de red. |
+| Facilidad de despliegue | 3/5 | Cada sketch se compila por separado en Arduino IDE y exige ajustar WiFi, broker y pines. |
+
+Catálogo heterogéneo pero útil de sensores ESP8266 con patrones de resiliencia; conviene tomarlo como recetario y revisar cada sketch antes de desplegarlo en un campo real.
+
+## Lo que no funcionó
+
+### TempSensor-8266 — Ticker con OneWire provocaba panic
+
+La lectura periódica del DS18B20 se lanzaba desde un Ticker, en contexto de interrupción. OneWire termina en delayMicroseconds() y el core llama a panic() cuando no puede suspender, con el mensaje core_esp8266_main.cpp:191. Se eliminó el Ticker y toda la temporización de la placa pasó al loop() con millis().
+
+### TempSensor-8266 — setTimeout en milisegundos, no segundos
+
+La verificación de conexión del broker usaba WiFiClient.setTimeout(3) creyendo que eran tres segundos, pero son tres milisegundos. El handshake TCP nunca alcanzaba a completarse y el nodo se reiniciaba sin motivo aparente. Se cambió a setTimeout(2000) y el fallo quedó documentado en developer.
+
+### AirSensor-8266 — MQ135 alimentado a 3,3 V
+
+El sensor de gases se conectó al pin de 3,3 V, insuficiente para el calentador interno. Las lecturas no representaban la concentración y el módulo necesitaba varios minutos de estabilización. La versión documenta que debe usarse VU a 5 V y esperar unos dos minutos antes de publicar.
+
+## Preguntas típicas
+
+**¿Todos usan MQTT?**
+
+No. AirSensor, DoorSensor, SensorPIR y TempSensor publican por MQTT; LDR, LCD y ReedSwitch son locales.
+
+**¿Dónde están las credenciales WiFi?**
+
+En secrets.h, que no se publica. Usá secrets.example.h como plantilla.
+
+**¿Qué es sensorudp?**
+
+Un servidor Python que recibe datagramas de sensores; no es firmware.
+
+**¿port_scanner es del mismo proyecto?**
+
+Es una utilidad de red que se conserva en la misma familia por origen, no por hardware.
+
+**¿Puedo usar ESP32?**
+
+Algunos sketches son compatibles; revisá pines y core antes de compilar.
+
+<!-- /ficha -->
+
 ## Documentación
 
 - [`docs/datasheet.md`](docs/datasheet.md) — instalación, operación y límites.
@@ -52,9 +104,9 @@ Cada versión tiene su propio FQBN y pinout. AirSensor, DoorSensor, SensorPIR y 
 - [`docs/REFERENCES.md`](docs/REFERENCES.md) — estándares, librerías y fuentes.
 - [`docs/index.html`](docs/index.html) — página del proyecto (GitHub Pages).
 
-## Alcance y honestidad
+## El proyecto en detalle
 
-## SensorPIR-8266 -- Sensor de Movimiento IoT con ESP8266
+### SensorPIR-8266 -- Sensor de Movimiento IoT con ESP8266
 
 Firmware para **NodeMCU ESP8266** que detecta movimiento mediante un **sensor PIR HC-SR501** y publica alertas en tiempo real via **MQTT** al broker `www.smartage.cl:1886`. Basado en la arquitectura resiliente **lp101_secure** con watchdog por software, ping check, reconexion automatica WiFi/MQTT y aleatorizacion de MAC ante fallos.
 

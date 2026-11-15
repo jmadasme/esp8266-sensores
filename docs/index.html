@@ -134,15 +134,83 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
   .stat{border-right:0;border-bottom:1px solid var(--line)}
   h1{font-size:42px}
 }
-.gate{display:grid;grid-template-columns:1.35fr .85fr;gap:26px;align-items:center;border:1px solid var(--line);border-radius:20px;padding:26px;background:linear-gradient(135deg,rgba(42,157,143,.12),rgba(69,123,157,.08));margin:22px 0 24px}.gate-badge{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--accent);border:1px solid rgba(42,157,143,.35);padding:6px 10px;border-radius:999px;margin-bottom:12px}.gate-actions{display:flex;flex-direction:column;gap:10px;align-items:stretch}.version.private{border-style:dashed;background:linear-gradient(180deg,rgba(11,34,43,.55),rgba(6,20,27,.7))}.version .state{font-family:var(--mono);font-size:9px;letter-spacing:.12em;padding:4px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}.state.pub{color:#2A9D8F;border-color:rgba(42,157,143,.4);background:rgba(42,157,143,.08)}.state.priv{color:#9ab;border-color:rgba(91,124,153,.45);background:rgba(91,124,153,.08)}.private-link{color:#9ab;cursor:pointer}@media(max-width:820px){.gate{grid-template-columns:1fr}}</style>
+
+/* ── Contenido heredado del proyecto original, en clave sobria ── */
+.rich{max-width:78ch}
+.rich p{margin:0 0 14px;color:#c3d4da}
+.rich h3{margin:26px 0 10px;font-size:19px;letter-spacing:-.02em}
+.rich h4{margin:22px 0 8px;font-size:15px;letter-spacing:-.01em}
+.rich ul,.rich ol{margin:0 0 16px;padding-left:22px;color:#c3d4da}
+.rich li{margin:0 0 6px}
+.rich figure{margin:22px 0;border:1px solid var(--line);border-radius:16px;padding:10px;background:rgba(11,34,43,.5)}
+.rich figure img{width:100%;display:block;border-radius:10px}
+.rich figcaption{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:9px;line-height:1.5}
+.rich .table-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:12px}
+.rich table{border-collapse:collapse;width:100%;font-size:13.5px}
+.rich th,.rich td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.rich th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(11,34,43,.6)}
+.rich tr:last-child td{border-bottom:0}
+.rich pre{margin:18px 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:#04141a;overflow-x:auto;font-family:var(--mono);font-size:12px;line-height:1.6;color:#cfe3e8}
+.rich code{font-family:var(--mono);font-size:.92em}
+.rich .note{margin:18px 0;padding:13px 16px;border-left:2px solid var(--accent);background:rgba(42,157,143,.07);color:#c3d4da;font-size:14px}
+.rich .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+.rich .card-grid .card{margin:0}
+
+
+.rich h3{margin:26px 0 8px}
+.rich p{margin:0 0 14px;color:var(--muted);line-height:1.7}
+.fail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:6px}
+.fail{background:rgba(11,34,43,.55);border:1px solid var(--line);border-radius:14px;padding:18px}
+.fail .v{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--warm,#D6A86A)}
+.fail h3{font-size:16px;margin:8px 0 6px}
+.fail p{font-size:14px;margin:0;color:var(--muted)}
+.rating-head{display:flex;align-items:center;gap:20px;margin:6px 0 18px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:rgba(11,34,43,.55)}
+.rating-avg{font-family:var(--mono);font-size:40px;line-height:1;color:var(--accent)}
+.rating-avg small{font-size:14px;color:var(--muted)}
+.rating-head p{margin:4px 0 0;font-size:14px;color:var(--muted);max-width:70ch}
+.rating{display:grid;gap:2px}
+.rating-row{display:grid;grid-template-columns:165px minmax(90px,1fr) 48px;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.rating-row:last-child{border-bottom:0}
+.rating-name{font-size:13.5px;font-weight:600}
+.rating-bar{height:6px;border-radius:99px;background:rgba(148,190,200,.14);overflow:hidden}
+.rating-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.rating-score{font-family:var(--mono);font-size:12.5px;color:var(--accent);text-align:right}
+.rating-note{grid-column:2/-1;font-size:12.5px;color:var(--muted);margin-top:-4px}
+.faq{display:grid;gap:0;margin-top:4px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";display:inline-block;width:18px;color:var(--accent);font-family:var(--mono)}
+.faq details[open] summary::before{content:"–"}
+.faq p{margin:10px 0 0 18px;font-size:14px;color:var(--muted)}
+@media(max-width:720px){
+  .fail-grid{grid-template-columns:1fr}
+  .rating-head{flex-direction:column;align-items:flex-start}
+  .rating-row{grid-template-columns:120px 1fr 44px}
+}
+
+
+.detail h2{margin:34px 0 10px;font-size:24px;letter-spacing:-.02em}
+.detail h3{margin:24px 0 8px;font-size:17px}
+.detail p{margin:0 0 14px;color:var(--muted);line-height:1.75}
+.detail ul,.detail ol{margin:0 0 16px 20px;color:var(--muted)}
+.detail li{margin:6px 0}
+.detail table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.detail th,.detail td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+.detail th{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.detail pre{background:rgba(6,20,27,.75);border:1px solid var(--line);border-radius:12px;padding:14px;overflow:auto;font-size:13px}
+.detail code{font-family:var(--mono);font-size:.92em}
+.detail img{max-width:100%;border-radius:12px;border:1px solid var(--line)}
+.detail blockquote{border-left:2px solid var(--accent);margin:14px 0;padding:2px 0 2px 16px;color:var(--muted)}
+
+</style>
 <link rel="stylesheet" href="assets/community.css?v=1">
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
   <a class="brand" href="/"><span class="brand-mark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg></span><span>jmadasme<span style="color:var(--accent)">.</span>portfolio</span></a>
   <nav class="nav-links">
-    <a href="#proyecto">Proyecto</a><a href="#versiones">Versiones</a>
-      <a href="#acceso">Acceso</a><a href="#stack">Stack</a><a href="#docs">Docs</a><a href="#comunidad">Comunidad</a>
+    <a href="#proyecto">Proyecto</a><a href="#versiones">Versiones</a><a href="#stack">Stack</a><a href="#docs">Docs</a><a href="#comunidad">Comunidad</a>
     <a class="btn btn-ghost" style="padding:9px 15px" href="/iot/">← IoT</a>
   </nav>
 </div></header>
@@ -156,7 +224,7 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
       <a class="btn btn-primary" href="https://github.com/jmadasme/esp8266-sensores" target="_blank" rel="noopener">Ver el repositorio <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-ghost" href="#versiones">Explorar versiones</a>
     </div>
-    <div class="badges"><span class="badge">MIT</span><span class="badge">IoT &amp; Hardware</span><span class="badge">11 versiones · 10 privadas</span><span class="badge">GitHub Pages</span></div>
+    <div class="badges"><span class="badge">MIT</span><span class="badge">IoT &amp; Hardware</span><span class="badge">11 versiónes</span><span class="badge">GitHub Pages</span></div>
   </div>
   <div class="hero-visual">
     <div class="visual-frame"><img src="assets/architecture.svg" alt="Árbol de versiones de ESP8266 Sensores"></div>
@@ -165,7 +233,7 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
   </div>
 </div></section>
 
-<section class="stats"><div class="wrap stats-grid"><div class="stat"><div class="stat-num">11</div><div class="stat-label">versiones</div></div><div class="stat"><div class="stat-num">1</div><div class="stat-label">pública</div></div><div class="stat"><div class="stat-num">10</div><div class="stat-label">privadas</div></div><div class="stat"><div class="stat-num">1</div><div class="stat-label">licencia</div></div></div></section>
+<section class="stats"><div class="wrap stats-grid"><div class="stat"><div class="stat-num">11</div><div class="stat-label">versiones</div></div><div class="stat"><div class="stat-num">2</div><div class="stat-label">lenguajes</div></div><div class="stat"><div class="stat-num">60</div><div class="stat-label">s MQTT</div></div><div class="stat"><div class="stat-num">0</div><div class="stat-label">nube propia</div></div></div></section>
 
 <section class="section" id="proyecto"><div class="wrap">
   <div class="section-head reveal"><div class="kicker">01 — El proyecto</div><h2>Qué resuelve</h2><p class="section-sub">Once proyectos pequeños de ESP8266 y utilidades: calidad de aire, temperatura, puertas, luz, PIR, LCD, reed switch, serial aleatorio, servidor UDP y escáner de puertos.</p></div>
@@ -176,105 +244,920 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
 </div></section>
 
 <section class="section" id="versiones"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">02 — Versiones</div><h2>Una puerta abierta. Diez bajo llave.</h2>
-  <p class="section-sub">La primera etapa queda libre para probar el camino. Las siguientes conservan el refinamiento, la depuración y el rendimiento: se comparten solo a quien las pide.</p></div>
-  <div class="gate reveal" id="acceso">
-    <div>
-      <span class="gate-badge">MODELO DE ACCESO</span>
-      <h3>11 versiones · 1 pública · 10 privadas</h3>
-      <p>La primera versión es gratuita y abierta. <strong>Última versión: privada.</strong> Las mejoras, optimizaciones y variantes de hardware no se regalan de forma anónima: se solicitan, se conversan y se entregan con un alcance claro.</p>
-    </div>
-    <div class="gate-actions">
-      <a class="btn btn-primary" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener">Solicitar acceso / licencia</a>
-      <a class="btn btn-ghost" href="#docs">Ver README y documentación</a>
-    </div>
-  </div>
+  <div class="section-head reveal"><div class="kicker">02 — Versiones</div><h2>La historia, completa.</h2><p class="section-sub">Cada carpeta conserva una etapa del proyecto. No se borraron las anteriores: se pusieron en contexto.</p></div>
   <div class="versions"><article class="version reveal">
   <div class="version-top"><h3>AirSensor-8266</h3><span class="count">3 archivos</span></div>
-  <div style="margin-bottom:8px"><span class="state pub">PÚBLICA</span></div>
   <p>Calidad de aire con MQ135 y publicación MQTT a smartage.cl:1886.</p>
-  <a href="versions/AirSensor-8266/" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-</article><article class="version reveal private">
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/AirSensor-8266" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</article><article class="version reveal">
   <div class="version-top"><h3>DHT22</h3><span class="count">9 archivos</span></div>
-  <div style="margin-bottom:8px"><span class="state priv">PRIVADA</span></div>
   <p>Temperatura y humedad con PlatformIO; el README está en docs/.</p>
-  <a class="private-link" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Solicitar acceso</a>
-</article><article class="version reveal private">
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/DHT22" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</article><article class="version reveal">
   <div class="version-top"><h3>DoorSensor-8266</h3><span class="count">3 archivos</span></div>
-  <div style="margin-bottom:8px"><span class="state priv">PRIVADA</span></div>
   <p>Sensor de puerta MC-38 con lectura cada 500 ms y MQTT.</p>
-  <a class="private-link" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Solicitar acceso</a>
-</article><article class="version reveal private">
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/DoorSensor-8266" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</article><article class="version reveal">
   <div class="version-top"><h3>LCD1602_I2C</h3><span class="count">12 archivos</span></div>
-  <div style="margin-bottom:8px"><span class="state priv">PRIVADA</span></div>
   <p>Controlador PCF8574 + HD44780 para LCD 16x2 por I2C.</p>
-  <a class="private-link" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Solicitar acceso</a>
-</article><article class="version reveal private">
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/LCD1602_I2C" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</article><article class="version reveal">
   <div class="version-top"><h3>Ldr-8266</h3><span class="count">3 archivos</span></div>
-  <div style="margin-bottom:8px"><span class="state priv">PRIVADA</span></div>
   <p>Lectura analógica de luz con clasificación oscuro/claro.</p>
-  <a class="private-link" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Solicitar acceso</a>
-</article><article class="version reveal private">
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/Ldr-8266" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</article><article class="version reveal">
   <div class="version-top"><h3>ReedSwitchTester</h3><span class="count">1 archivo</span></div>
-  <div style="margin-bottom:8px"><span class="state priv">PRIVADA</span></div>
   <p>Sketch de 946 bytes para probar un MC-38 en tres modos.</p>
-  <a class="private-link" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Solicitar acceso</a>
-</article><article class="version reveal private">
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/ReedSwitchTester" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</article><article class="version reveal">
   <div class="version-top"><h3>SensorPIR-8266</h3><span class="count">5 archivos</span></div>
-  <div style="margin-bottom:8px"><span class="state priv">PRIVADA</span></div>
   <p>PIR HC-SR501 con watchdog, ping, reconexión y MAC aleatoria.</p>
-  <a class="private-link" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Solicitar acceso</a>
-</article><article class="version reveal private">
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/SensorPIR-8266" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</article><article class="version reveal">
   <div class="version-top"><h3>TempSensor-8266</h3><span class="count">10 archivos</span></div>
-  <div style="margin-bottom:8px"><span class="state priv">PRIVADA</span></div>
   <p>DS18B20 con publicación MQTT cada 60 segundos.</p>
-  <a class="private-link" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Solicitar acceso</a>
-</article><article class="version reveal private">
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/TempSensor-8266" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</article><article class="version reveal">
   <div class="version-top"><h3>random-serial</h3><span class="count">5 archivos</span></div>
-  <div style="margin-bottom:8px"><span class="state priv">PRIVADA</span></div>
   <p>ESP32-CAM que emite un número aleatorio entre 1 y 100 cada 2 segundos.</p>
-  <a class="private-link" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Solicitar acceso</a>
-</article><article class="version reveal private">
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/random-serial" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</article><article class="version reveal">
   <div class="version-top"><h3>sensorudp</h3><span class="count">40 archivos</span></div>
-  <div style="margin-bottom:8px"><span class="state priv">PRIVADA</span></div>
   <p>Servidor UDP en Python para recibir datos de sensores.</p>
-  <a class="private-link" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Solicitar acceso</a>
-</article><article class="version reveal private">
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/sensorudp" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</article><article class="version reveal">
   <div class="version-top"><h3>port_scanner</h3><span class="count">51 archivos</span></div>
-  <div style="margin-bottom:8px"><span class="state priv">PRIVADA</span></div>
   <p>Escáner TCP multihilo en Python con banner, servicios y salida.</p>
-  <a class="private-link" href="https://github.com/jmadasme/esp8266-sensores/issues/new?template=solicitud-acceso.yml&title=Solicitud%20de%20acceso%20a%20versiones%20privadas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Solicitar acceso</a>
+  <a href="https://github.com/jmadasme/esp8266-sensores/tree/main/versions/port_scanner" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </article></div>
 </div></section>
+<section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">El concepto</div><h2>Qué es y por qué existe</h2></div><div class="rich reveal"><p>esp8266-sensores reúne once sketches y utilidades para ESP8266, desde un PIR o un DS18B20 hasta un LCD I2C, un escáner de puertos y un servidor UDP. Cada pieza resuelve un problema acotado y documenta, cuando corresponde, el intervalo de publicación, el tópico MQTT, la reconexión y el diagnóstico.</p><p>Está pensado para quien arma sensorización de bajo costo y necesita patrones que sobrevivan a la WiFi doméstica: watchdog, ping de control, MAC aleatoria tras fallos y heartbeat. Importa porque muestra el oficio detrás de un nodo: no alcanza con leer el sensor, hay que detectar cuándo el dato dejó de ser confiable. La documentación es desigual, y el conjunto se presenta como catálogo, no como plataforma.</p></div></div></section>
+<section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">El proyecto en detalle</div><h2>Documentación preservada</h2><p class="section-sub">El README original de la versión de referencia, completo.</p></div><div class="detail rich reveal">
+<p>Firmware para <strong>NodeMCU ESP8266</strong> que detecta movimiento mediante un <strong>sensor PIR HC-SR501</strong> y publica alertas en tiempo real via <strong>MQTT</strong> al broker <code>www.smartage.cl:1886</code>. Basado en la arquitectura resiliente <strong>lp101_secure</strong> con watchdog por software, ping check, reconexion automatica WiFi/MQTT y aleatorizacion de MAC ante fallos.</p>
+<p>La conexion WiFi es <strong>directa</strong> mediante <code>WiFi.begin()</code> con credenciales definidas en <code>secrets.h</code>.</p>
+<hr/>
+<h2 id="tabla-de-contenidos">Tabla de Contenidos</h2>
+<ul>
+<li><a href="#descripcion-general">Descripcion General</a></li>
+<li><a href="#placa-y-especificaciones">Placa y Especificaciones</a></li>
+<li><a href="#sensor-pir-hc-sr501--principio-de-funcionamiento">Sensor PIR HC-SR501 -- Principio de Funcionamiento</a></li>
+<li><a href="#tabla-de-pines-pinout">Tabla de Pines (Pinout)</a></li>
+<li><a href="#diagrama-de-conexion">Diagrama de Conexion</a></li>
+<li><a href="#instrucciones-de-uso">Instrucciones de Uso</a></li>
+<li><a href="#compilacion-y-carga">Compilacion y Carga</a></li>
+<li><a href="#mensajes-mqtt">Mensajes MQTT</a></li>
+<li><a href="#comandos-mqtt">Comandos MQTT</a></li>
+<li><a href="#indicador-led-de-estado">Indicador LED de Estado</a></li>
+<li><a href="#resiliencia-y-recuperacion-ante-fallos">Resiliencia y Recuperacion ante Fallos</a></li>
+<li><a href="#ejemplos-de-uso">Ejemplos de Uso</a></li>
+<li><a href="#calibracion-del-sensor-pir">Calibracion del Sensor PIR</a></li>
+<li><a href="#advertencias-y-precauciones">Advertencias y Precauciones</a></li>
+<li><a href="#estructura-del-proyecto">Estructura del Proyecto</a></li>
+<li><a href="#licencia">Licencia</a></li>
+</ul>
+<hr/>
+<h2 id="descripcion-general">Descripcion General</h2>
+<p><strong>SensorPIR-8266</strong> es un dispositivo IoT autonomo que monitoriza movimiento en un espacio fisico. Al detectar movimiento, publica inmediatamente una alerta MQTT; al cesar el movimiento, publica un mensaje de estado <code>false</code>. Ademas, envia un heartbeat periodico cada 30 segundos para que el sistema central sepa que sigue operativo.</p>
+<p>El firmware hereda la arquitectura de <strong>lp101_secure</strong>, garantizando alta disponibilidad mediante:</p>
+<ul>
+<li>Conexion WiFi directa con <code>WiFi.begin()</code> (credenciales en <code>secrets.h</code>)</li>
+<li>Watchdog por software (180s timeout)</li>
+<li>Ping check a 8.8.8.8 cada 30s (20 fallos consecutivos provocan reinicio)</li>
+<li>Reconexion WiFi y MQTT automatica con reintentos</li>
+<li>Aleatorizacion de MAC ante fallos persistentes (evita bloqueos por DHCP / AP)</li>
+<li>Control remoto de encendido/apagado del sensor via comando MQTT (<code>directive/powerState</code>)</li>
+</ul>
+<hr/>
+<h2 id="placa-y-especificaciones">Placa y Especificaciones</h2>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Placa</strong></td>
+<td>NodeMCU ESP8266 (ESP-12E / LoLin V3)</td>
+</tr>
+<tr>
+<td><strong>Microcontrolador</strong></td>
+<td>Tensilica L106 32-bit RISC</td>
+</tr>
+<tr>
+<td><strong>Frecuencia</strong></td>
+<td>80 MHz</td>
+</tr>
+<tr>
+<td><strong>Flash</strong></td>
+<td>4 MB</td>
+</tr>
+<tr>
+<td><strong>RAM disponible</strong></td>
+<td>~80 KB (heap para usuario)</td>
+</tr>
+<tr>
+<td><strong>Voltaje logico</strong></td>
+<td>3.3V (pines GPIO)</td>
+</tr>
+<tr>
+<td><strong>Alimentacion</strong></td>
+<td>5V via USB (cable micro-USB estandar)</td>
+</tr>
+<tr>
+<td><strong>Conectividad</strong></td>
+<td>WiFi 802.11 b/g/n 2.4 GHz integrada</td>
+</tr>
+<tr>
+<td><strong>Conexion WiFi</strong></td>
+<td>Directa via <code>WiFi.begin()</code></td>
+</tr>
+<tr>
+<td><strong>FQBN</strong></td>
+<td><code>esp8266:esp8266:nodemcuv2</code></td>
+</tr>
+<tr>
+<td><strong>Sensor</strong></td>
+<td>PIR HC-SR501 (infrarrojo pasivo)</td>
+</tr>
+<tr>
+<td><strong>Protocolo</strong></td>
+<td>MQTT v3.1.1</td>
+</tr>
+<tr>
+<td><strong>Broker</strong></td>
+<td><code>www.smartage.cl:1886</code></td>
+</tr>
+<tr>
+<td><strong>Device ID</strong></td>
+<td><code>6a7357a00221f201ddcc5f1d</code></td>
+</tr>
+<tr>
+<td><strong>WiFi SSID</strong></td>
+<td><code>Nv2</code></td>
+</tr>
+<tr>
+<td><strong>Usuario MQTT</strong></td>
+<td><code>luisHernandez</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="sensor-pir-hc-sr501-principio-de-funcionamiento">Sensor PIR HC-SR501 -- Principio de Funcionamiento</h2>
+<p>El <strong>HC-SR501</strong> es un sensor <strong>infrarrojo pasivo (PIR)</strong> que detecta cambios en la radiacion infrarroja dentro de su campo de vision. Su funcionamiento se basa en:</p>
+<ol>
+<li>
+<p><strong>Lente de Fresnel</strong>: concentra la radiacion IR del entorno sobre el sensor piroelectrico, dividiendo el area de cobertura en zonas (calientes y frias). Tiene un angulo de deteccion de aproximadamente 110deg y un alcance de 3 a 7 metros.</p>
+</li>
+<li>
+<p><strong>Sensor piroelectrico</strong>: contiene dos elementos sensibles conectados en oposicion. Cuando una persona (fuente de calor en movimiento) cruza de una zona a otra, la diferencia de radiacion entre los dos elementos genera un pulso de voltaje.</p>
+</li>
+<li>
+<p><strong>Chip controlador BISS0001</strong>: amplifica y procesa la senal del sensor piroelectrico. En <strong>modo H (repetible)</strong>, la salida se mantiene en HIGH mientras el movimiento continue. Este modo es esencial para que el firmware pueda detectar correctamente el cese de movimiento.</p>
+</li>
+<li>
+<p><strong>Salida digital TTL</strong> (pin OUT):
+   - <strong>HIGH (3.3V)</strong>: movimiento detectado
+   - <strong>LOW (0V)</strong>: sin movimiento</p>
+</li>
+</ol>
+<h3 id="requisito-critico-jumper-en-modo-h">Requisito critico: Jumper en modo H</h3>
+<p>El jumper amarillo del HC-SR501 debe estar en la posicion <strong>H</strong> (repetible/retriggerable). En modo L (no repetible), la salida solo emite un pulso unico y no permite al firmware detectar correctamente el cese de movimiento.</p>
+<pre><code>         ┌─────────────────────┐
+         │    HC-SR501          │
+         │                      │
+         │  ┌───┐    ┌───────┐  │
+         │  │H L│    │  o  o │  │  &lt;- potenciometros
+         │  └─┬─┘    │Delay  │  │     (delay time, sensibilidad)
+         │    │      │Sensib │  │
+         │    └──────└───┬───┘  │
+         │  Jumper en H  │      │
+         └───────────────┴──────┘
+</code></pre>
+<h3 id="logica-de-deteccion-en-firmware">Logica de deteccion en firmware</h3>
+<p>El firmware utiliza <strong>deteccion de flancos simple</strong> (edge detection) con un intervalo minimo entre reportes de <strong>200 ms</strong> (<code>SENSOR_REPORT_MS</code>):</p>
+<ul>
+<li><strong>Flanco LOW-&gt;HIGH</strong>: se detecta movimiento y se publica <code>report/detectionState = true</code>.</li>
+<li><strong>Flanco HIGH-&gt;LOW</strong>: se detecta cese de movimiento y se publica <code>report/detectionState = false</code>.</li>
+<li><strong>Intervalo minimo</strong>: no se envia un nuevo reporte si han pasado menos de 200 ms desde el anterior, evitando saturar el broker con reportes repetidos.</li>
+</ul>
+<h3 id="tiempo-de-calentamiento-warm-up">Tiempo de calentamiento (warm-up)</h3>
+<p>El HC-SR501 requiere <strong>aproximadamente 60 segundos</strong> tras el encendido para estabilizar su circuito interno. El firmware espera <strong>65 segundos</strong> antes de comenzar a procesar lecturas, ignorando cualquier fluctuacion durante este periodo.</p>
+<hr/>
+<h2 id="tabla-de-pines-pinout">Tabla de Pines (Pinout)</h2>
+<table>
+<thead>
+<tr>
+<th>Pin NodeMCU</th>
+<th>GPIO</th>
+<th>Modo</th>
+<th>Componente Conectado</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>D2</strong></td>
+<td>GPIO4</td>
+<td><code>INPUT</code></td>
+<td><strong>PIR HC-SR501 -- pin OUT</strong></td>
+<td>Senal TTL 3.3V: HIGH = movimiento, LOW = sin movimiento. No requiere resistencia pull-down externa (el sensor entrega 0V en reposo).</td>
+</tr>
+<tr>
+<td><strong>D4</strong></td>
+<td>GPIO2</td>
+<td><code>OUTPUT</code></td>
+<td><strong>LED_BUILTIN</strong> (LED azul en placa)</td>
+<td>Indicador de estado del sistema. Logica <strong>invertida</strong>: LOW = encendido, HIGH = apagado. NUNCA indica movimiento (solo estado WiFi/MQTT). Debe permanecer HIGH durante el boot.</td>
+</tr>
+<tr>
+<td><strong>VU / Vin</strong></td>
+<td>--</td>
+<td>PWR (5V)</td>
+<td><strong>PIR HC-SR501 -- pin VCC</strong></td>
+<td>5V desde el puerto USB. El HC-SR501 opera entre 4.5V y 20V, asi que 5V es el voltaje ideal. <strong>No conectar a pin de 3.3V</strong> (el sensor requiere minimo 4.5V).</td>
+</tr>
+<tr>
+<td><strong>GND</strong></td>
+<td>--</td>
+<td>GND</td>
+<td><strong>PIR HC-SR501 -- pin GND</strong></td>
+<td>Tierra comun. Cualquier pin GND de la NodeMCU sirve.</td>
+</tr>
+<tr>
+<td>TX (GPIO1)</td>
+<td>GPIO1</td>
+<td>UART TX</td>
+<td>USB-Serial integrado</td>
+<td>Reservado para comunicacion Serial (115200 baud). <strong>No conectar nada en este pin.</strong></td>
+</tr>
+<tr>
+<td>RX (GPIO3)</td>
+<td>GPIO3</td>
+<td>UART RX</td>
+<td>USB-Serial integrado</td>
+<td>Reservado para comunicacion Serial (115200 baud). <strong>No conectar nada en este pin.</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pines-reservados-que-no-deben-usarse">Pines reservados que NO deben usarse</h3>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>GPIO</th>
+<th>Motivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D3</td>
+<td>GPIO0</td>
+<td>Debe estar HIGH durante el boot para modo normal. El NodeMCU tiene pull-up interno.</td>
+</tr>
+<tr>
+<td>D8</td>
+<td>GPIO15</td>
+<td>Debe estar LOW durante el boot. El NodeMCU tiene pull-down interno.</td>
+</tr>
+<tr>
+<td>D0</td>
+<td>GPIO16</td>
+<td>Solo usable para wake-up desde deep sleep. No utilizado en este proyecto.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="diagrama-de-conexion">Diagrama de Conexion</h2>
+<h3 id="esquema-de-conexion">Esquema de conexion</h3>
+<pre><code>                  NodeMCU ESP8266                    HC-SR501 PIR Sensor
+               ┌──────────────────┐              ┌─────────────────────┐
+               │                  │              │                     │
+               │  VU (5V)  ───────┼──────────────┼── VCC (5V)          │
+               │                  │              │                     │
+               │  GND      ───────┼──────────────┼── GND               │
+               │                  │              │                     │
+               │  D2 (GPIO4) ─────┼──────────────┼── OUT (senal)       │
+               │                  │              │                     │
+               │  D4 (GPIO2)       │  (LED azul integrado en placa)    │
+               │                  │              │                     │
+               │  micro-USB ───────┼── Alimentacion 5V y Serial       │
+               │                  │              │                     │
+               └──────────────────┘              └─────────────────────┘
+</code></pre>
+<h3 id="vista-fisica-protoboard">Vista fisica (protoboard)</h3>
+<pre><code>   ┌────────────────────────────────────────────────────────┐
+   │                                                        │
+   │              NodeMCU ESP8266                           │
+   │   ┌──────────────────────────────┐                     │
+   │   │  D0  D1  D2  D3  D4  3V3 GND│                     │
+   │   │  ██  ██  ██  ██  ██  ██  ██ │                     │
+   │   │        ┌┤   │                │                     │
+   │   │        ││   └────────────────┼───┐                 │
+   │   │        ││                    │   │                 │
+   │   │        ││   D5  D6  D7  D8 RX TX│   │             │
+   │   │        ││   ██  ██  ██  ██  ██ ██│   │             │
+   │   │   VU───┘│                    │   │                 │
+   │   │   GND───┘                    │   │                 │
+   │   └──────────────────────────────┘   │                 │
+   │                                      │                 │
+   │         ┌────────────────────┐       │                 │
+   │         │   HC-SR501 PIR     │       │                 │
+   │         │                    │       │                 │
+   │         │  VCC o─────────────┼───────┘  (5V)          │
+   │         │  OUT o─────────────┼─── D2 (GPIO4)          │
+   │         │  GND o─────────────┼─── GND                 │
+   │         │                    │                         │
+   │         │   ╔═══╗            │                         │
+   │         │   ║H L║ &lt;- modo H  │                         │
+   │         │   ╚═╤═╝            │                         │
+   │         │    jumper          │                         │
+   │         └────────────────────┘                         │
+   │                                                        │
+   │   Cable USB --- PC / cargador 5V                       │
+   └────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="configuracion-de-los-potenciometros-del-pir">Configuracion de los potenciometros del PIR</h3>
+<table>
+<thead>
+<tr>
+<th>Potenciometro</th>
+<th>Ajuste recomendado</th>
+<th>Razon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Delay time</strong> (izquierdo)</td>
+<td><strong>Minimo</strong> (giro antihorario completo)</td>
+<td>Para que el cese de movimiento se detecte con precision inmediata</td>
+</tr>
+<tr>
+<td><strong>Sensibilidad</strong> (derecho)</td>
+<td><strong>Maximo</strong> (giro horario completo)</td>
+<td>Maximo alcance de deteccion (~7m)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jumper-de-trigger">Jumper de trigger</h3>
+<table>
+<thead>
+<tr>
+<th>Posicion</th>
+<th>Modo</th>
+<th>Uso en este proyecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>H</strong></td>
+<td>Repetible (retriggerable)</td>
+<td><strong>Usar esta.</strong> La salida se mantiene HIGH mientras haya movimiento continuo</td>
+</tr>
+<tr>
+<td>L</td>
+<td>No repetible</td>
+<td>No usar. Produce un solo pulso y no permite detectar correctamente el cese</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lista-de-materiales">Lista de materiales</h3>
+<table>
+<thead>
+<tr>
+<th>Cantidad</th>
+<th>Componente</th>
+<th>Descripcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>NodeMCU ESP8266 (ESP-12E)</td>
+<td>Placa de desarrollo con WiFi</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Sensor PIR HC-SR501</td>
+<td>Sensor de movimiento infrarrojo pasivo</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cables jumper hembra-hembra</td>
+<td>Para conectar VCC, GND y OUT del PIR a la NodeMCU</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Cable micro-USB</td>
+<td>Para alimentacion y programacion</td>
+</tr>
+</tbody>
+</table>
+<p><strong>No se requieren resistencias ni componentes adicionales.</strong> La NodeMCU alimenta directamente al PIR desde el pin VU (5V del USB).</p>
+<hr/>
+<h2 id="instrucciones-de-uso">Instrucciones de Uso</h2>
+<h3 id="primer-arranque">Primer arranque</h3>
+<ol>
+<li>
+<p><strong>Conectar el hardware</strong> segun el diagrama de conexion mostrado arriba. Verificar:
+   - PIR VCC → NodeMCU VU (5V)
+   - PIR OUT → NodeMCU D2 (GPIO4)
+   - PIR GND → NodeMCU GND
+   - Jumper del PIR en posicion <strong>H</strong>
+   - Potenciometro de delay al minimo (antihorario)
+   - Potenciometro de sensibilidad al maximo (horario)</p>
+</li>
+<li>
+<p><strong>Configurar credenciales</strong> en <code>secrets.h</code> antes de compilar:
+   - WiFi: SSID <code>Nv2</code>, password <code>12345678</code>
+   - MQTT: broker <code>www.smartage.cl:1886</code>, usuario <code>luisHernandez</code> / <code>luis123</code>
+   - Device ID: <code>6a7357a00221f201ddcc5f1d</code></p>
+</li>
+<li>
+<p><strong>Compilar y cargar el firmware</strong> (ver seccion <a href="#compilacion-y-carga">Compilacion y Carga</a>).</p>
+</li>
+<li>
+<p><strong>Abrir el Monitor Serial</strong> a 115200 baud para ver los mensajes de diagnostico.</p>
+</li>
+<li>
+<p><strong>Esperar ~65 segundos</strong> mientras el PIR se inicializa. En el Serial veras:
+   <code>SensorPIR-8266 booted
+     PIR: D2/GPIO4 | MQTT: report/detectionState, report/powerState
+     Warmup: 65s...
+   Connecting to Nv2
+   ................
+   Connected: Nv2
+   IP: 192.168.1.100
+   Connecting to MQTT...
+   connected
+   PIR ready</code></p>
+</li>
+<li>
+<p><strong>Mover la mano frente al sensor</strong> -- deberias ver <code>&gt;&gt;&gt; MOTION DETECTED &lt;&lt;&lt;</code> y recibir el mensaje MQTT <code>report/detectionState: true</code>.</p>
+</li>
+<li>
+<p><strong>Dejar de mover</strong> -- veras <code>--- motion cleared ---</code> y el mensaje <code>report/detectionState: false</code>.</p>
+</li>
+</ol>
+<h3 id="operacion-normal">Operacion normal</h3>
+<p>Una vez inicializado, el dispositivo funciona de forma autonoma:</p>
+<ul>
+<li>El LED azul (D4) parpadea cada 20 segundos indicando que WiFi, MQTT y sistema estan OK.</li>
+<li>Cuando se detecta movimiento, publica inmediatamente por MQTT. El LED <strong>NO</strong> parpadea con el movimiento (es solo indicador de sistema).</li>
+<li>Cada 30 segundos envia un heartbeat <code>report/online</code> con valor <code>true</code>.</li>
+<li>Si se pierde WiFi o MQTT, reconecta automaticamente.</li>
+<li>Si hay fallos repetidos, reinicia con una MAC diferente para evitar bloqueos de red.</li>
+</ul>
+<h3 id="control-remoto-del-sensor">Control remoto del sensor</h3>
+<p>El sensor puede encenderse o apagarse remotamente mediante comandos MQTT:</p>
+<ul>
+<li>Enviar <code>ON</code> al topic <code>6a7357a00221f201ddcc5f1d/directive/powerState</code> para <strong>activar</strong> el sensor.</li>
+<li>Enviar <code>OFF</code> al topic <code>6a7357a00221f201ddcc5f1d/directive/powerState</code> para <strong>desactivar</strong> el sensor (deja de reportar detecciones).</li>
+</ul>
+<p>Cuando el sensor se desactiva, el firmware responde publicando <code>report/powerState: OFF</code>. Al reactivarse, publica <code>report/powerState: ON</code>.</p>
+<hr/>
+<h2 id="compilacion-y-carga">Compilacion y Carga</h2>
+<h3 id="requisitos-previos">Requisitos previos</h3>
+<ul>
+<li><a href="https://arduino.github.io/arduino-cli/">arduino-cli</a> instalado</li>
+<li>NodeMCU ESP8266 conectada por USB</li>
+<li>Puerto serie identificado (ej: <code>/dev/ttyUSB0</code> en Linux, <code>COM3</code> en Windows)</li>
+<li>Credenciales configuradas en <code>secrets.h</code></li>
+</ul>
+<h3 id="instalacion-de-arduino-cli">Instalacion de arduino-cli</h3>
+<pre><code class="language-bash"># Instalar arduino-cli si no esta instalado
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
 
-<section class="section tight"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">03 — Cómo se usa</div><h2>De la carpeta a la práctica.</h2></div>
-  <div class="timeline"><div class="step reveal"><div class="step-n">01</div><h4>Elegí el sensor</h4><p>Cada carpeta es un proyecto independiente.</p></div><div class="step reveal"><div class="step-n">02</div><h4>Revisá el pinout</h4><p>Está en el README o en los comentarios del sketch.</p></div><div class="step reveal"><div class="step-n">03</div><h4>Configurá red</h4><p>Copiá secrets.example.h cuando exista.</p></div><div class="step reveal"><div class="step-n">04</div><h4>Verificá el tópico</h4><p>Sin broker y tópico correctos no hay dato.</p></div></div>
-</div></section>
+# Mover al PATH si es necesario
+sudo mv bin/arduino-cli /usr/local/bin/
+</code></pre>
+<h3 id="instalacion-del-core-esp8266">Instalacion del core ESP8266</h3>
+<pre><code class="language-bash"># Anadir el indice de placas ESP8266
+arduino-cli config add board_manager.additional_urls https://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-<section class="section tight"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">04 — Decisiones</div><h2>Lo que lo hace distinto</h2></div>
-  <div class="features"><div class="feature reveal"><h4>Once proyectos</h4><p>Cada uno con un propósito claro.</p></div><div class="feature reveal"><h4>Reconexión</h4><p>El PIR y otros nodos reintentan solos.</p></div><div class="feature reveal"><h4>MQTT</h4><p>Formato simple y compatible.</p></div><div class="feature reveal"><h4>Utilidades Python</h4><p>UDP y escáner TCP complementan el hardware.</p></div><div class="feature reveal"><h4>Código corto</h4><p>Se lee completo en una sentada.</p></div><div class="feature reveal"><h4>Sin framework</h4><p>Arduino y Python estándar.</p></div></div>
-</div></section>
+# Actualizar el indice
+arduino-cli core update-index
 
-<section class="section tight" id="stack"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">05 — Stack y arranque</div><h2>Con qué está construido</h2></div>
-  <div class="stack-grid">
-    <div class="reveal"><div class="chips"><span class="chip">ESP8266</span><span class="chip">ESP32-CAM</span><span class="chip">Arduino C++</span><span class="chip">Python</span><span class="chip">MQTT</span><span class="chip">PlatformIO</span></div><div class="note"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Cada versión tiene su propio FQBN y pinout. AirSensor, DoorSensor, SensorPIR y TempSensor usan MQTT; las utilidades Python no requieren placa. Se removieron secretos en 5 archivo(s) de esta familia.</span></div></div>
-    <div class="terminal reveal"><div class="terminal-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><pre>git clone https://github.com/jmadasme/esp8266-sensores.git
-cd esp8266-sensores/versions/AirSensor-8266
-cp secrets.example.h secrets.h
-arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 .</pre></div>
-  </div>
-</div></section>
+# Instalar el core ESP8266
+arduino-cli core install esp8266:esp8266
+</code></pre>
+<h3 id="instalacion-de-librerias">Instalacion de librerias</h3>
+<pre><code class="language-bash"># PubSubClient (cliente MQTT) - unica libreria externa requerida
+arduino-cli lib install "PubSubClient"
+</code></pre>
+<p>Todas las demas librerias (<code>ESP8266WiFi</code>, <code>Ticker</code>, <code>Arduino.h</code>, <code>user_interface.h</code>) son built-in del core ESP8266.</p>
+<h3 id="compilar">Compilar</h3>
+<pre><code class="language-bash"># Desde el directorio del proyecto
+cd /home/jma/Documents/Proyects/OpenCode/AG.CreadorContenido/proyectos/SensorPIR-8266
 
-<section class="section tight" id="docs"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">06 — Documentación</div><h2>Para usar y para entender.</h2><p class="section-sub">Cada documento está en el repositorio, versionado junto al código.</p></div>
-  <div class="docs"><a class="doc reveal" href="https://github.com/jmadasme/esp8266-sensores/blob/main/docs/datasheet.md" target="_blank" rel="noopener"><span class="tag">DATASHEET</span><h4>Manual de operación</h4><p>Instalación, configuración, uso y diagnóstico.</p></a><a class="doc reveal" href="https://github.com/jmadasme/esp8266-sensores/blob/main/docs/developer.md" target="_blank" rel="noopener"><span class="tag">DEVELOPER</span><h4>Guía de código</h4><p>Arquitectura, módulos, contratos y extensión.</p></a><a class="doc reveal" href="https://github.com/jmadasme/esp8266-sensores/blob/main/docs/REFERENCES.md" target="_blank" rel="noopener"><span class="tag">REFERENCES</span><h4>Referencias</h4><p>Estándares, librerías y fuentes oficiales.</p></a></div>
-</div></section>
+arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 .
+</code></pre>
+<h3 id="transferir-a-la-placa">Transferir a la placa</h3>
+<pre><code class="language-bash"># Ajusta el puerto segun tu sistema
+arduino-cli upload -p /dev/ttyUSB0 --fqbn esp8266:esp8266:nodemcuv2 .
+</code></pre>
+<p>En Windows: <code>-p COM3</code> (o el puerto que corresponda).</p>
+<h3 id="monitor-serial">Monitor Serial</h3>
+<pre><code class="language-bash">arduino-cli monitor -p /dev/ttyUSB0 -c baudrate=115200
+</code></pre>
+<h3 id="comando-todo-en-uno">Comando todo-en-uno</h3>
+<pre><code class="language-bash">arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 . &amp;&amp; \
+arduino-cli upload -p /dev/ttyUSB0 --fqbn esp8266:esp8266:nodemcuv2 . &amp;&amp; \
+arduino-cli monitor -p /dev/ttyUSB0 -c baudrate=115200
+</code></pre>
+<hr/>
+<h2 id="mensajes-mqtt">Mensajes MQTT</h2>
+<h3 id="topics-de-publicacion-device-broker">Topics de publicacion (device -&gt; broker)</h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Payload</th>
+<th>Frecuencia</th>
+<th>Descripcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;DEVICE_ID&gt;/report/online</code></td>
+<td><code>true</code></td>
+<td>Cada 30s</td>
+<td>Heartbeat: confirma que el dispositivo esta vivo y conectado</td>
+</tr>
+<tr>
+<td><code>&lt;DEVICE_ID&gt;/report/detectionState</code></td>
+<td><code>true</code></td>
+<td>Al detectar movimiento</td>
+<td>Alerta de movimiento detectado (flanco LOW-&gt;HIGH del PIR)</td>
+</tr>
+<tr>
+<td><code>&lt;DEVICE_ID&gt;/report/detectionState</code></td>
+<td><code>false</code></td>
+<td>Al cesar movimiento</td>
+<td>Movimiento finalizado (flanco HIGH-&gt;LOW del PIR)</td>
+</tr>
+<tr>
+<td><code>&lt;DEVICE_ID&gt;/report/powerState</code></td>
+<td><code>ON</code></td>
+<td>Al activarse el sensor</td>
+<td>Sensor habilitado para detectar movimiento</td>
+</tr>
+<tr>
+<td><code>&lt;DEVICE_ID&gt;/report/powerState</code></td>
+<td><code>OFF</code></td>
+<td>Al desactivarse el sensor</td>
+<td>Sensor deshabilitado (no reporta detecciones)</td>
+</tr>
+</tbody>
+</table>
+<p>Donde <code>&lt;DEVICE_ID&gt;</code> es <code>6a7357a00221f201ddcc5f1d</code> (configurable en <code>secrets.h</code> via <code>MQTT_CLIENT</code>).</p>
+<h3 id="intervalo-minimo-entre-reportes">Intervalo minimo entre reportes</h3>
+<p>Para evitar saturar el broker, el firmware impone un intervalo minimo de <strong>200 ms</strong> entre reportes consecutivos de deteccion (<code>SENSOR_REPORT_MS</code>). Si el PIR oscila mas rapido que este intervalo, los reportes intermedios se descartan.</p>
+<hr/>
+<h2 id="comandos-mqtt">Comandos MQTT</h2>
+<h3 id="topics-de-suscripcion-broker-device">Topics de suscripcion (broker -&gt; device)</h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Payload</th>
+<th>Efecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;DEVICE_ID&gt;/directive/powerState</code></td>
+<td><code>ON</code></td>
+<td>Activa el sensor PIR. Comienza a reportar detecciones. Confirma publicando <code>report/powerState: ON</code>.</td>
+</tr>
+<tr>
+<td><code>&lt;DEVICE_ID&gt;/directive/powerState</code></td>
+<td><code>OFF</code></td>
+<td>Desactiva el sensor PIR. Deja de reportar detecciones. Confirma publicando <code>report/powerState: OFF</code>.</td>
+</tr>
+<tr>
+<td><code>&lt;DEVICE_ID&gt;/#</code></td>
+<td>cualquier</td>
+<td>El dispositivo se suscribe a todos los topics bajo su ID para futuras extensiones. Los mensajes recibidos se procesan segun el tipo de comando.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplos-de-comandos-con-mosquitto_pub">Ejemplos de comandos con mosquitto_pub</h3>
+<pre><code class="language-bash"># Activar sensor
+mosquitto_pub -h www.smartage.cl -p 1886 \
+  -u luisHernandez -P luis123 \
+  -t "6a7357a00221f201ddcc5f1d/directive/powerState" \
+  -m "ON"
 
-<section class="section tight"><div class="wrap"><div class="note reveal"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span><strong>Preservación:</strong> las versiones se copiaron sin <code>.git</code>, <code>node_modules</code>, entornos virtuales, compilados ni bases de datos. Los tokens y claves detectados fueron redactados; las plantillas <code>.example</code> se conservan. Las limitaciones conocidas están en la documentación, no escondidas.</span></div></div></section>
+# Desactivar sensor
+mosquitto_pub -h www.smartage.cl -p 1886 \
+  -u luisHernandez -P luis123 \
+  -t "6a7357a00221f201ddcc5f1d/directive/powerState" \
+  -m "OFF"
+</code></pre>
+<p>Respuesta esperada en el Monitor Serial:</p>
+<pre><code>Sensor ON
+</code></pre>
+<p>o</p>
+<pre><code>Sensor OFF
+</code></pre>
+<hr/>
+<h2 id="indicador-led-de-estado">Indicador LED de Estado</h2>
+<p>El LED_BUILTIN (GPIO2, D4) es el LED azul integrado en la placa NodeMCU. <strong>No indica movimiento</strong>; solo refleja el estado de conectividad del sistema:</p>
+<table>
+<thead>
+<tr>
+<th>Comportamiento del LED</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parpadeo rapido (100ms ON/OFF)</td>
+<td>Conectando a WiFi</td>
+</tr>
+<tr>
+<td>Parpadeo medio (500ms ON/OFF)</td>
+<td>WiFi conectado, reconectando MQTT</td>
+</tr>
+<tr>
+<td>Parpadeo lento (pulso cada 20s)</td>
+<td>Sistema OK: WiFi + MQTT conectados</td>
+</tr>
+<tr>
+<td>Apagado (HIGH, logica invertida)</td>
+<td>Estado normal entre pulsos de heartbeat</td>
+</tr>
+<tr>
+<td>3 destellos rapidos (50ms)</td>
+<td>Mensaje MQTT recibido</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="resiliencia-y-recuperacion-ante-fallos">Resiliencia y Recuperacion ante Fallos</h2>
+<p>El firmware implementa multiples capas de tolerancia a fallos, heredadas de la arquitectura <strong>lp101_secure</strong>:</p>
+<h3 id="1-watchdog-por-software">1. Watchdog por Software</h3>
+<p>Un Ticker interno se reinicia en cada iteracion del <code>loop()</code>. Si el loop se bloquea por <strong>180 segundos</strong>, el watchdog fuerza <code>ESP.restart()</code>.</p>
+<h3 id="2-ping-check">2. Ping Check</h3>
+<p>Cada <strong>30 segundos</strong>, el dispositivo intenta una conexion TCP a <code>8.8.8.8:53</code> (DNS de Google). Si falla <strong>20 veces consecutivas</strong> (equivalente a 10 minutos sin internet), se reinicia la placa.</p>
+<h3 id="3-reconexion-wifi">3. Reconexion WiFi</h3>
+<p>Si <code>WiFi.status()</code> indica desconexion en cualquier momento, se reinicia el proceso de conexion con <code>WiFi.begin()</code> usando las credenciales de <code>secrets.h</code>. Tras <strong>40 reintentos fallidos</strong>, se aleatoriza la MAC y se reinicia.</p>
+<h3 id="4-reconexion-mqtt">4. Reconexion MQTT</h3>
+<p>Si el cliente MQTT se desconecta, se reintenta la conexion cada <strong>10 segundos</strong> con un timeout total de <strong>2 minutos</strong>. Si no se logra conectar en ese tiempo, se reinicia con nueva MAC.</p>
+<h3 id="5-aleatorizacion-de-mac-mac-randomization">5. Aleatorizacion de MAC (MAC Randomization)</h3>
+<p>Ante fallos persistentes (40 reintentos WiFi o 10 fallos consecutivos de publicacion MQTT), el firmware:</p>
+<ol>
+<li>Guarda un flag en la memoria RTC del ESP8266 (<code>magic = 0xDEAD</code>, <code>failureFlag = 1</code>).</li>
+<li>Reinicia la placa via <code>ESP.restart()</code>.</li>
+<li>En el siguiente boot, detecta el flag y modifica el ultimo byte de la direccion MAC.</li>
+<li>Conecta con la nueva MAC, evitando potenciales bloqueos del AP o del servidor DHCP.</li>
+</ol>
+<hr/>
+<h2 id="ejemplos-de-uso">Ejemplos de Uso</h2>
+<h3 id="ejemplo-1-monitoreo-con-mosquitto_sub">Ejemplo 1: Monitoreo con mosquitto_sub</h3>
+<pre><code class="language-bash"># Suscribirse a todos los topics del dispositivo
+mosquitto_sub -h www.smartage.cl -p 1886 \
+  -u luisHernandez -P luis123 \
+  -t "6a7357a00221f201ddcc5f1d/#" -v
+</code></pre>
+<p><strong>Salida esperada al detectar movimiento:</strong></p>
+<pre><code>6a7357a00221f201ddcc5f1d/report/online true
+6a7357a00221f201ddcc5f1d/report/powerState ON
+6a7357a00221f201ddcc5f1d/report/detectionState true
+6a7357a00221f201ddcc5f1d/report/detectionState false
+</code></pre>
+<h3 id="ejemplo-2-salida-esperada-en-monitor-serial-115200-baud">Ejemplo 2: Salida esperada en Monitor Serial (115200 baud)</h3>
+<pre><code>SensorPIR-8266 booted
+  PIR: D2/GPIO4 | MQTT: report/detectionState, report/powerState
+  Warmup: 65s...
 
+Connecting to Nv2
+................
+Connected: Nv2
+IP: 192.168.1.100
+Connecting to MQTT...
+connected
+PIR ready
+&gt;&gt;&gt; MOTION DETECTED &lt;&lt;&lt;
+--- motion cleared ---
+</code></pre>
+<h3 id="ejemplo-3-integracion-con-home-assistant">Ejemplo 3: Integracion con Home Assistant</h3>
+<pre><code class="language-yaml"># configuration.yaml
+mqtt:
+  binary_sensor:
+    - name: "Sensor de Movimiento Sala"
+      state_topic: "6a7357a00221f201ddcc5f1d/report/detectionState"
+      payload_on: "true"
+      payload_off: "false"
+      device_class: motion
+      availability_topic: "6a7357a00221f201ddcc5f1d/report/online"
+      payload_available: "true"
+
+  switch:
+    - name: "Sensor PIR Power"
+      state_topic: "6a7357a00221f201ddcc5f1d/report/powerState"
+      command_topic: "6a7357a00221f201ddcc5f1d/directive/powerState"
+      state_on: "ON"
+      state_off: "OFF"
+      payload_on: "ON"
+      payload_off: "OFF"
+      optimistic: false
+</code></pre>
+<h3 id="ejemplo-4-script-python-para-monitoreo">Ejemplo 4: Script Python para monitoreo</h3>
+<pre><code class="language-python">import paho.mqtt.client as mqtt
+import time
+
+BROKER = "www.smartage.cl"
+PORT = 1886
+DEVICE_ID = "6a7357a00221f201ddcc5f1d"
+
+def on_connect(client, userdata, flags, rc):
+    client.subscribe(f"{DEVICE_ID}/#")
+    print(f"Conectado. Suscrito a {DEVICE_ID}/#")
+
+def on_message(client, userdata, msg):
+    topic = msg.topic
+    payload = msg.payload.decode()
+
+    if "report/detectionState" in topic:
+        if payload == "true":
+            print(f"&gt;&gt;&gt; MOVIMIENTO DETECTADO &lt;&lt;&lt;  [{time.ctime()}]")
+        else:
+            print(f"--- Movimiento finalizado ---  [{time.ctime()}]")
+    elif "report/powerState" in topic:
+        print(f"Estado del sensor: {payload}")
+    elif "report/online" in topic:
+        print(".", end="", flush=True)  # heartbeat silencioso
+
+client = mqtt.Client()
+client.username_pw_set("luisHernandez", "luis123")
+client.on_connect = on_connect
+client.on_message = on_message
+client.connect(BROKER, PORT, 60)
+client.loop_forever()
+</code></pre>
+<h3 id="ejemplo-5-desactivar-el-sensor-por-la-noche-cron-job">Ejemplo 5: Desactivar el sensor por la noche (cron job)</h3>
+<pre><code class="language-bash"># En crontab:
+# Desactivar sensor a las 23:00
+0 23 * * * mosquitto_pub -h www.smartage.cl -p 1886 -u luisHernandez -P luis123 -t "6a7357a00221f201ddcc5f1d/directive/powerState" -m "OFF"
+
+# Activar sensor a las 07:00
+0 7 * * * mosquitto_pub -h www.smartage.cl -p 1886 -u luisHernandez -P luis123 -t "6a7357a00221f201ddcc5f1d/directive/powerState" -m "ON"
+</code></pre>
+<h3 id="ejemplo-6-monitoreo-con-mqtt-explorer">Ejemplo 6: Monitoreo con MQTT Explorer</h3>
+<ol>
+<li>Abrir <a href="http://mqtt-explorer.com/">MQTT Explorer</a> u otra herramienta MQTT.</li>
+<li>Conectar al broker <code>www.smartage.cl:1886</code> con usuario <code>luisHernandez</code> / <code>luis123</code>.</li>
+<li>Suscribirse al topic <code>6a7357a00221f201ddcc5f1d/#</code>.</li>
+<li>Mover la mano frente al sensor.</li>
+</ol>
+<hr/>
+<h2 id="calibracion-del-sensor-pir">Calibracion del Sensor PIR</h2>
+<p>El HC-SR501 tiene <strong>dos potenciometros</strong> ajustables mediante destornillador:</p>
+<h3 id="1-delay-time-tiempo-de-retardo-potenciometro-izquierdo">1. Delay Time (Tiempo de retardo) -- potenciometro izquierdo</h3>
+<p>Controla cuanto tiempo permanece HIGH la salida tras detectar movimiento. Rango: ~5 segundos a ~300 segundos.</p>
+<p><strong>IMPORTANTE para este proyecto</strong>: El delay time del PIR debe estar <strong>al minimo</strong> (giro antihorario completo) para que el cese de movimiento se detecte con precision. Si el delay time es muy alto (&gt;5s), el firmware reportara el cese con un retraso igual a ese valor.</p>
+<h3 id="2-sensitivity-sensibilidad-potenciometro-derecho">2. Sensitivity (Sensibilidad) -- potenciometro derecho</h3>
+<p>Controla la distancia maxima de deteccion. Rango: ~3 metros a ~7 metros.</p>
+<p><strong>Recomendacion para este proyecto</strong>: al maximo (giro horario completo) para maxima cobertura.</p>
+<h3 id="procedimiento-de-calibracion">Procedimiento de calibracion</h3>
+<ol>
+<li>Conectar el dispositivo y esperar los 65 segundos de warm-up.</li>
+<li>Con el Monitor Serial abierto, caminar frente al sensor.</li>
+<li>Ajustar <strong>Sensibilidad</strong> segun necesidad: reducir si hay falsos positivos, aumentar si no detecta a la distancia deseada.</li>
+<li>Verificar que tras dejar de moverse, el mensaje <code>detectionState: false</code> aparece rapidamente (confirmando que el delay time esta al minimo).</li>
+<li>Si <code>detectionState: false</code> tarda mas de 5 segundos, reducir el delay time.</li>
+</ol>
+<hr/>
+<h2 id="advertencias-y-precauciones">Advertencias y Precauciones</h2>
+<h3 id="electricas">Electricas</h3>
+<table>
+<thead>
+<tr>
+<th>Advertencia</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NO alimentar el PIR con 3.3V</strong></td>
+<td>El HC-SR501 requiere minimo 4.5V. Alimentarlo con 3.3V causa funcionamiento erratico o fallo total. Usar siempre VU (5V).</td>
+</tr>
+<tr>
+<td><strong>NO conectar salida PIR directamente a 5V</strong></td>
+<td>Aunque el PIR se alimenta con 5V, su salida OUT es de 3.3V y es segura para los GPIO del ESP8266.</td>
+</tr>
+<tr>
+<td><strong>NO superar 500mA en VU</strong></td>
+<td>El pin VU entrega el voltaje del USB (5V). Un puerto USB estandar entrega 500mA. El PIR consume &lt; 50uA en reposo.</td>
+</tr>
+<tr>
+<td><strong>Verificar polaridad</strong></td>
+<td>Una conexion invertida VCC/GND puede danar permanentemente el sensor PIR.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pines-criticos-del-esp8266">Pines criticos del ESP8266</h3>
+<table>
+<thead>
+<tr>
+<th>Pin GPIO</th>
+<th>Precaución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPIO0 (D3)</td>
+<td>Debe estar HIGH durante el boot. El NodeMCU tiene pull-up interno, pero <strong>no conectes nada que fuerce LOW</strong>.</td>
+</tr>
+<tr>
+<td>GPIO2 (D4)</td>
+<td>Debe estar HIGH durante el boot. El LED_BUILTIN lo mantiene HIGH por defecto.</td>
+</tr>
+<tr>
+<td>GPIO15 (D8)</td>
+<td>Debe estar LOW durante el boot. El NodeMCU tiene pull-down interno.</td>
+</tr>
+<tr>
+<td>GPIO1 (TX) y GPIO3 (RX)</td>
+<td>Reservados para comunicacion Serial. No conectar sensores ni actuadores.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="operativas">Operativas</h3>
+<table>
+<thead>
+<tr>
+<th>Advertencia</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tiempo de warm-up</strong></td>
+<td>El PIR necesita ~60s para estabilizarse. El firmware espera 65s. Durante este periodo no se detecta movimiento.</td>
+</tr>
+<tr>
+<td><strong>Jumper del PIR en modo H</strong></td>
+<td>Debe estar en modo <strong>H (repetible)</strong> para que el cese de movimiento se detecte correctamente. En modo L la salida solo pulsa una vez.</td>
+</tr>
+<tr>
+<td><strong>Delay time del PIR</strong></td>
+<td>El potenciometro de delay time debe estar al minimo para deteccion precisa del cese de movimiento.</td>
+</tr>
+<tr>
+<td><strong>Device ID unico</strong></td>
+<td>Si se despliegan multiples dispositivos, cada uno debe tener un <code>MQTT_CLIENT</code> diferente para evitar colisiones en el broker.</td>
+</tr>
+<tr>
+<td><strong>Monitor Serial a 115200</strong></td>
+<td>El baud rate debe ser exactamente 115200. Otros valores mostraran caracteres basura.</td>
+</tr>
+<tr>
+<td><strong>Alimentacion estable</strong></td>
+<td>Un cable USB de mala calidad o un puerto USB con ruido pueden causar reinicios aleatorios del ESP8266.</td>
+</tr>
+<tr>
+<td><strong>Alcance WiFi</strong></td>
+<td>El ESP8266 tiene antena integrada en PCB. En entornos con mucha interferencia o paredes gruesas, el alcance se reduce significativamente.</td>
+</tr>
+<tr>
+<td><strong>Temperatura ambiente</strong></td>
+<td>El PIR puede generar falsos positivos con cambios bruscos de temperatura ambiental (aire acondicionado, calefactores, corrientes de aire).</td>
+</tr>
+<tr>
+<td><strong>Mascotas</strong></td>
+<td>El PIR puede detectar mascotas dependiendo de su tamano y la sensibilidad configurada.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="credenciales">Credenciales</h3>
+<pre><code class="language-cpp">// secrets.h contiene TODAS las credenciales:
+// - WiFi: WIFI_SSID, WIFI_PASSWORD
+// - MQTT: MQTT_BROKER, MQTT_PORT, MQTT_USERNAME, MQTT_PASSWORD, MQTT_CLIENT
+// No versionar con valores reales en repositorios publicos.
+</code></pre>
+<hr/>
+<h2 id="estructura-del-proyecto">Estructura del Proyecto</h2>
+<pre><code>SensorPIR-8266/
+├── SensorPIR-8266.ino   # Sketch principal: setup, loop, PIR, WiFi, MQTT, watchdog
+├── secrets.h             # Credenciales WiFi y MQTT
+├── .gitignore            # Exclusiones para build artifacts y archivos sensibles
+├── PLAN.md               # Plan de implementacion (referencia interna)
+├── AUDIT_REPORT.md       # Informe de auditoria de codigo (referencia interna)
+├── README.md             # Este documento
+└── docs/
+    ├── datasheet.md      # Documentacion de usuario detallada
+    └── developer.md      # Documentacion para desarrolladores
+</code></pre>
+<hr/>
+<h2 id="licencia">Licencia</h2>
+<p>Este proyecto se distribuye como software libre. Consultar los terminos especificos con el autor del proyecto.</p>
+<hr/>
+<p><strong>Documentacion generada el 2026-08-05. Version del firmware: basada en arquitectura lp101_secure.</strong></p></div></div></section>
+<section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">Lo que no funcionó</div><h2>Los tropiezos, documentados</h2><p class="section-sub">Las primeras versiones existen para que estos errores no se repitan: cada una dejó una decisión de diseño verificable.</p></div><div class="fail-grid reveal"><div class="fail"><div class="v">TempSensor-8266</div><h3>Ticker con OneWire provocaba panic</h3><p>La lectura periódica del DS18B20 se lanzaba desde un Ticker, en contexto de interrupción. OneWire termina en delayMicroseconds() y el core llama a panic() cuando no puede suspender, con el mensaje core_esp8266_main.cpp:191. Se eliminó el Ticker y toda la temporización de la placa pasó al loop() con millis().</p></div><div class="fail"><div class="v">TempSensor-8266</div><h3>setTimeout en milisegundos, no segundos</h3><p>La verificación de conexión del broker usaba WiFiClient.setTimeout(3) creyendo que eran tres segundos, pero son tres milisegundos. El handshake TCP nunca alcanzaba a completarse y el nodo se reiniciaba sin motivo aparente. Se cambió a setTimeout(2000) y el fallo quedó documentado en developer.</p></div><div class="fail"><div class="v">AirSensor-8266</div><h3>MQ135 alimentado a 3,3 V</h3><p>El sensor de gases se conectó al pin de 3,3 V, insuficiente para el calentador interno. Las lecturas no representaban la concentración y el módulo necesitaba varios minutos de estabilización. La versión documenta que debe usarse VU a 5 V y esperar unos dos minutos antes de publicar.</p></div></div></div></section><section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">Ficha de evaluación</div><h2>Cómo se mide este proyecto</h2><p class="section-sub">Seis criterios con la misma escala en todo el catálogo, para comparar sin marketing.</p></div><div class="rating-head reveal"><div class="rating-avg">3.3<small>/5</small></div><div><strong>Madurez global</strong><p>Catálogo heterogéneo pero útil de sensores ESP8266 con patrones de resiliencia; conviene tomarlo como recetario y revisar cada sketch antes de desplegarlo en un campo real.</p></div></div><div class="rating reveal"><div class="rating-row"><div class="rating-name">Madurez</div><div class="rating-bar"><i style="width:60%"></i></div><div class="rating-score">3/5</div><div class="rating-note">Once sketches con watchdog y reconexión en los MQTT; varios son ejercicios locales y ninguno tiene tests automatizados.</div></div><div class="rating-row"><div class="rating-name">Reproducibilidad</div><div class="rating-bar"><i style="width:60%"></i></div><div class="rating-score">3/5</div><div class="rating-note">Depende de hardware barato y un broker externo; las credenciales no se publican y solo TempSensor trae plantilla.</div></div><div class="rating-row"><div class="rating-name">Documentación</div><div class="rating-bar"><i style="width:60%"></i></div><div class="rating-score">3/5</div><div class="rating-note">SensorPIR, TempSensor y port_scanner están bien documentados; ReedSwitchTester y otras variantes carecen de README.</div></div><div class="rating-row"><div class="rating-name">Honestidad de límites</div><div class="rating-bar"><i style="width:80%"></i></div><div class="rating-score">4/5</div><div class="rating-note">Reconoce fallos de reconexión, límites del MQ135 y ausencia de plantillas; alguna credencial queda visible en el README.</div></div><div class="rating-row"><div class="rating-name">Valor demostrativo</div><div class="rating-bar"><i style="width:80%"></i></div><div class="rating-score">4/5</div><div class="rating-note">Concentra patrones útiles de sensórica ESP8266: watchdog, heartbeat, MAC aleatoria y diagnóstico de red.</div></div><div class="rating-row"><div class="rating-name">Facilidad de despliegue</div><div class="rating-bar"><i style="width:60%"></i></div><div class="rating-score">3/5</div><div class="rating-note">Cada sketch se compila por separado en Arduino IDE y exige ajustar WiFi, broker y pines.</div></div></div></div></section><section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">Preguntas típicas</div><h2>Lo que suelen preguntar</h2></div><div class="faq reveal"><details><summary>¿Todos usan MQTT?</summary><p>No. AirSensor, DoorSensor, SensorPIR y TempSensor publican por MQTT; LDR, LCD y ReedSwitch son locales.</p></details><details><summary>¿Dónde están las credenciales WiFi?</summary><p>En secrets.h, que no se publica. Usá secrets.example.h como plantilla.</p></details><details><summary>¿Qué es sensorudp?</summary><p>Un servidor Python que recibe datagramas de sensores; no es firmware.</p></details><details><summary>¿port_scanner es del mismo proyecto?</summary><p>Es una utilidad de red que se conserva en la misma familia por origen, no por hardware.</p></details><details><summary>¿Puedo usar ESP32?</summary><p>Algunos sketches son compatibles; revisá pines y core antes de compilar.</p></details></div></div></section>
 <section class="cta"><div class="wrap"><div class="cta-box reveal">
   <div class="kicker">Siguiente paso</div><h2>¿Te animás?</h2>
   <p>Usá esta familia como base para esp8266 sensores. Está documentada para que puedas entenderla, ejecutarla y continuarla sin adivinar.</p>
